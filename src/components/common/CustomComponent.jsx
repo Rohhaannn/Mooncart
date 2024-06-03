@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { NavLink } from "react-router-dom";
 
 // const CustomLink = ({ href, className, children }) => {
 
@@ -22,12 +23,12 @@ const CustomLink = ({ href, className, children }) => {
   const linkStyles = "text-[15px] font-medium text-gray-600 cursor-pointer list-none";
 
   return (
-    <a
-      href={href}
+    <NavLink
+      to={href}
       className={`${className} ${linkStyles}`}
     >
       {children}
-    </a>
+    </NavLink>
   );
 };
 

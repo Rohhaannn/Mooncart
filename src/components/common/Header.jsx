@@ -40,7 +40,7 @@ const Header = () => {
               <div className='relative z-20'>
                 <IoCartOutline size={23} />
                 <div className='absolute -top-2 -right-1.5'> 
-                  <Badges color="bg-red-500"> 0 </Badges>
+                  <Badges color="bg-red-600"> 0 </Badges>
                 </div>
               </div>
             </div>
