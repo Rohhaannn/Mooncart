@@ -9,6 +9,13 @@ const Layout = ({ children }) => {
       <Header/>
       <main style={{minHeight: "80vh"}}> {children} </main>
       <Footer/>
+      <Footer/>
+      <Footer/>
+      <Footer/>
+      <Footer/>
+      <Footer/>
+      <Footer/>
+      <Footer/>
     </div>
   )
 }

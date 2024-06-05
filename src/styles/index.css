@@ -77,4 +77,42 @@ button:focus-visible {
   background-color: #24262b;
   opacity: 0;
   transform: translateX(-100%);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+  z-index: 100;
+  margin-top: 10px;
+}
+.menu-container.open {
+  opacity: 1;
+  transform: translateX(0);
+}
+.menu-container.closed {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+/*======== for sticky effect ==========*/
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 4;
+  transition: background-color 0.3s ease;
+}
+
+/*======== scrolldown animation ==========*/
+.header.scrolled {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  animation: fadeInDown 0.5s ease;
+  z-index: 100;
+}
+
+@keyframes fadeInDown {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
