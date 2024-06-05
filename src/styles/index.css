@@ -70,3 +70,11 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 } */
+
+
+/*===================  Navbar   =====================*/
+.menu-container {
+  background-color: #24262b;
+  opacity: 0;
+  transform: translateX(-100%);
+}
