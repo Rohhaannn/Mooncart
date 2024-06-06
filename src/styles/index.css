@@ -73,22 +73,27 @@ button:focus-visible {
 
 
 /*===================  Navbar   =====================*/
+
 .menu-container {
   background-color: #24262b;
   opacity: 0;
-  transform: translateX(-100%);
+  transform: translateX(-100%); 
   transition: opacity 0.3s ease-out, transform 0.3s ease-out;
   z-index: 100;
-  margin-top: 10px;
+  margin-top: 10px; 
+  width: 100%; 
 }
+
 .menu-container.open {
   opacity: 1;
-  transform: translateX(0);
+  transform: translateX(0); 
 }
+
 .menu-container.closed {
   opacity: 0;
-  transform: translateX(-100%);
+  transform: translateX(-100%); 
 }
+
 /*======== for sticky effect ==========*/
 .header {
   position: fixed;
