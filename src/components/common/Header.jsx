@@ -89,6 +89,7 @@ const Header = () => {
             </button>
           </div>
         </div>
+        
         {/* Responsive menu if below the 768px */}
         <div ref={menuRef} className={`lg:hidden flex-col w-full p-5 absolute right-0 top-full transition-transform duration-300 transform ${isOpen ? 'open' : 'closed'} menu-container`}>
           {menulists.map((list) => (
