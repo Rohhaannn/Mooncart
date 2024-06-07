@@ -53,5 +53,9 @@ CustomNavLink.propTypes = {
 };
 
 
-export { CustomNavLink, CustomLink, Badges };
+export { 
+  CustomNavLink, 
+  CustomLink, 
+  Badges 
+};
 
