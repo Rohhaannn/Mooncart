@@ -54,7 +54,7 @@ const Header = () => {
           <div className='hidden lg:flex items-center justify-between gap-8'>
             {menulists.map((list) => (
               <li key={list.id} className='uppercase list-none'>
-                <CustomNavLink href={list.path}>{list.link}</CustomNavLink>
+                <CustomNavLink href={list.path} className={() => ()}>{list.link}</CustomNavLink>
               </li>
             ))}
           </div>
