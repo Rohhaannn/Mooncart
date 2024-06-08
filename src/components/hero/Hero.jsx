@@ -25,14 +25,14 @@ export const HeroItem = ({ title, description, price, color, image }) => {
   return (
     <div>
       <section className='content flex justify-between lg:px-16 h-[50vh] lg:h-[90vh] relative z-20'>
-        <div className="left w-1/2 p-8 lg:p-32 lg:py-64">
-          <Title 
+        <div className="left w-2/3 p-8 lg:p-32 lg:py-64">
+          <div 
             level={1} 
             className="leading-none font-medium md-text-3xl lg:text-[70px] lg:leading-snug"
           >
 
             {title}
-          </Title>
+          </div>
         </div>
         
       </section>
