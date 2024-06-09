@@ -37,8 +37,8 @@ export const herolist = [
     title: "Natural Wooden Products",
     description:
       "Sell globally in minutes with localized currencies, languages, and experiences in every market.",
-    image: "../images/hero/h1.png",
-    price: [
+    image: "../../public/images/h1.png",
+    prices: [
       {
         color: "red",
         value: 135.78,
@@ -65,8 +65,8 @@ export const herolist = [
     title: "Explore Wooden Products",
     description:
       "Sell globally in minutes with localized currencies, languages, and experiences in every market.",
-    image: "../images/hero/h2.png",
-    price: [
+    image: "../../public/images/h2.png",
+    prices: [
       {
         color: "red",
         value: 154.23,
