@@ -17,7 +17,7 @@ function App() {
             path='/' 
             element={
               <Layout> 
-                <Home />
+                <Home/>
               </Layout>} 
           />
         </Routes>
