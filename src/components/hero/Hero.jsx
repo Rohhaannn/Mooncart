@@ -2,11 +2,49 @@ import React, { useState } from "react";
 import { herolist } from "../../assets/data/data";
 import { Title, BodyOne, Caption } from "../common/CustomComponent";
 import PropTypes from "prop-types";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
+import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
+
+function SampleNextArrow(props) {
+  const { onClick } = props;
+  return (
+    <div className="absolute bottom-0 left-96 lg:left-1/2 slider-btn bg-gray-100" onClick={onClick}>
+      <button className="next">
+        <MdKeyboardArrowRight size={50}/>
+      </button>
+    </div>
+  );
+}
+
+function SamplePrevArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div className="absolute bottom-0 left-96 lg:left-[47.1%] slider-btn z-10 bg-white" onClick={onClick}>
+      <button className="next">
+        <MdKeyboardArrowLeft size={50}/>
+      </button>
+    </div>
+  );
+}
 
 export const Hero = () => {
+
+  const settings = {
+    dots: false,
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />
+  };
+
+
   return (
-    <div>
+    <>
       <section className="h-[250vh] lg:h-[190vh] mt-20 bg-white relative z-1">
+      <Slider {...settings}> 
         {herolist.map((item) => (
           <HeroItem
             key={item.id}
@@ -17,8 +55,10 @@ export const Hero = () => {
             image={item.image}
           />
         ))}
+      </Slider>  
       </section>
-    </div>
+      
+    </>
   );
 };
 
@@ -93,6 +133,8 @@ export const HeroItem = ({ title, description, prices, color, image }) => {
     </div>
   );
 };
+
+
 
 HeroItem.propTypes = {
   title: PropTypes.string.isRequired,
