@@ -44,7 +44,7 @@ export const Hero = () => {
 
   return (
     <>
-      <section className="h-[250vh] lg:h-[190vh] mt-20 bg-white relative z-1">
+      <section className="h-[50vh] lg:h-[90vh] mt-20 bg-white relative z-1">
       <Slider {...settings}> 
         {herolist.map((item) => (
           <HeroItem
@@ -139,25 +139,29 @@ export const HeroItem = ({ title, description, prices, color, image }) => {
 const Banner = () => {
   return(
     <>
-      <div className="py-20 container flex flex-col lg:flex-row items-center gap-5">
+      <div className="container mx- auto lg:ml-[205px] py-20 flex flex-col lg:flex-row items-center gap-5 relative">
         <div>
           <BannerCard 
             title="Wooden Water Bottles" 
             desc="UP TO 60% OFF" 
-            cover="./images/hero.product1-1.png"
+            cover="./images/hero/product1-1.png"
           />
-
+        </div>
+        <div className="flex justify-between flex-col gap-8">
           <BannerCard 
-            title="" 
-            desc="" 
-            cover="./images/hero.product1-1.png"
+            title="Wooden Water Bottles" 
+            desc="UP TO 60% OFF" 
+            cover="./images/hero/product2.png"
+            className={true}
           />
-
           <BannerCard 
-            title="" 
-            desc="" 
-            cover="./images/hero.product1-1.png"
-          />
+            title="Wooden Water Bottles" 
+            desc="UP TO 60% OFF" 
+            cover="./images/hero/product3.png"
+            className={true}
+            ClassSecond={true}
+          /> 
+
         </div>
       </div>
     </>
@@ -176,6 +180,10 @@ const BannerCard = ({ title, desc, cover, className, ClassSecond }) => {
           <div>
             <Title level={2}> {title} </Title>
             <p className="text-lg font-normal leading-none"> {desc} </p>
+          </div>
+          
+          <div className="w-1/2 mt-5">
+            <button className="secondary-btn flex justify-end"> shop now </button>
           </div>
 
         </div>
