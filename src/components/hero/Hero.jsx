@@ -8,10 +8,11 @@ import "slick-carousel/slick/slick-theme.css";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 
 
+
 function SampleNextArrow(props) {
   const { onClick } = props;
   return (
-    <div className="absolute bottom-0 left-96 lg:left-1/2 slider-btn bg-gray-100" onClick={onClick}>
+    <div className="absolute bottom-0 left-96 lg:left-1/2 slider-btn bg-gray-100 text-black" onClick={onClick}>
       <button className="next">
         <MdKeyboardArrowRight size={50}/>
       </button>
@@ -22,7 +23,7 @@ function SampleNextArrow(props) {
 function SamplePrevArrow(props) {
   const { className, style, onClick } = props;
   return (
-    <div className="absolute bottom-0 left-96 lg:left-[47.1%] slider-btn z-10 bg-white" onClick={onClick}>
+    <div className="absolute bottom-0 left-96 lg:left-[46.3%] slider-btn z-10 bg-white text-black" onClick={onClick}>
       <button className="next">
         <MdKeyboardArrowLeft size={50}/>
       </button>
@@ -59,6 +60,7 @@ export const Hero = () => {
       </Slider>  
       </section>
       <Banner/>
+      
     </>
   );
 };
@@ -139,7 +141,7 @@ export const HeroItem = ({ title, description, prices, color, image }) => {
 const Banner = () => {
   return(
     <>
-      <div className="container mx- auto lg:ml-[205px] py-20 flex flex-col lg:flex-row items-center gap-5 relative">
+      <div className="container mx-auto lg:ml-[205px] py-20 flex flex-col lg:flex-row items-center gap-5 relative">
         <div>
           <BannerCard 
             title="Wooden Water Bottles" 
