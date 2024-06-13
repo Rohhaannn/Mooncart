@@ -22,7 +22,7 @@ const Product = () => {
                 <ProductCard 
                   id={product.id}
                   key={product.id}
-                  Title={product.title}
+                  title={product.title}
                   description={product.description}
                   images={product.images}
                   price={product.price}
