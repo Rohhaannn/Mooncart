@@ -1,12 +1,12 @@
-import React from 'react'
-import Hero from '../../components/hero/Hero'
-import Product from '../product/Product'
+import { Banner, Hero, Product, ShippingInfo } from '../../router/index'
 
 const Home = () => {
   return (
     <>
       <Hero/>
       <Product/>
+      <ShippingInfo/>
+      <Banner/>
     </>
   )
 }

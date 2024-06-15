@@ -1,3 +1,10 @@
+import { FaShippingFast } from 'react-icons/fa';
+import { MdOutlineMarkUnreadChatAlt } from 'react-icons/md';
+import { FaCircleDollarToSlot } from 'react-icons/fa6';
+import { BiChat } from 'react-icons/bi';
+import { BodyOne, Title } from '../../components/common/CustomComponent';
+
+
 const additionalInfo = [
   {
     id: 1,
@@ -18,3 +25,45 @@ const additionalInfo = [
     icon: <FaCircleDollarToSlot size={50} />,
   },
 ];
+
+
+
+
+
+const ShippingInfo = () => {
+  return (
+    <>
+      <section className='container'>
+        <div className='py-32 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8'>
+          {additionalInfo.map((info) => (
+
+            <div key={info.id} className='flex items-center justify-center flex-col text-center gap-3'>
+              <div className='text-primary-green'> {info.icon} </div>
+              <h3 className='text-xl font-bold mt-4'> {info.title} </h3>
+              <p className='mt-2'> {info.description} </p>
+            </div>
+          ))}
+        </div>
+
+        <div className='box bg-primary p-8 flex flex-col lg:flex-row items-center justify-between'>
+          <div className='left flex items-center gap-3'>
+            <BiChat size={100} color='white'/>
+            <div>
+              <Title className="text-white leading-none" level={3}>
+                SUBSCRIBE TO OUR NEWSLETTERS
+              </Title>
+              <BodyOne className="text-gray-300"> 
+                Get Latest News, Offers and Discounts. 
+              </BodyOne>
+            </div>
+          </div>
+          <div className='left w-full p-5 px-8 lg:w-1/2'>
+            <input type="text" className="outline-none w-full p-3" placeholder='Enter Your Email'/>
+          </div>
+        </div>
+      </section>
+    </>
+  )
+}
+
+export default ShippingInfo
