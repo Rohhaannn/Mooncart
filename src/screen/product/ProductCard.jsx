@@ -181,7 +181,12 @@ const ProductCard = ({
                     </div>
                   </div>
 
-                  <button className='close-btn absolute top-0 right-0 w-12 h-12 flex justify-center items-center bg-primary-green text-white hover:bg-green-800' onClick={closeModal}> ✖ </button>
+                  <button 
+                    className='close-btn absolute top-0 right-0 w-12 h-12 flex justify-center items-center bg-primary-green text-white hover:bg-green-800' 
+                    onClick={closeModal}
+                  > 
+                    ✖ 
+                  </button>
 
 
                 </div>
