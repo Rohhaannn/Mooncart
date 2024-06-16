@@ -1,4 +1,4 @@
-import { Banner, Hero, Product, ShippingInfo } from '../../router/index'
+import { Banner, Hero, Product, ProductSlide, ShippingInfo, Testimonials } from '../../router/index'
 
 const Home = () => {
   return (
@@ -7,6 +7,8 @@ const Home = () => {
       <Product/>
       <ShippingInfo/>
       <Banner/>
+      <ProductSlide/>
+      <Testimonials/>
     </>
   )
 }

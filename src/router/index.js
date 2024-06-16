@@ -5,6 +5,10 @@ import Product from "../screen/product/Product";
 import ProductCard from "../screen/product/ProductCard";
 import ShippingInfo from "../screen/product/ShippingInfo";
 import Banner from "../screen/product/Banner";
+import ProductSlide from "../screen/product/ProductSlide";
+import Testimonials from "../components/hero/Testimonials";
+
+
 
 
 export {
@@ -14,5 +18,7 @@ export {
   Product,
   ProductCard,
   ShippingInfo,
-  Banner
+  Banner,
+  ProductSlide,
+  Testimonials
 } 
