@@ -53,7 +53,7 @@ const ProductSlide = () => {
 
 
 
-const ProductSlideCard = () => {
+export const ProductSlideCard = () => {
 
   const settings = {
     dots: false,
