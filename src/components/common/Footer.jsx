@@ -8,7 +8,7 @@ export default function Footer() {
     <footer className="w-full py-14">
       <div className=" mx-auto flex max-w-6xl items-center justify-between px-4 py-2 lg:px-0">
         <div className="inline-flex items-center">
-        <img src={ logo } alt="LogoImg" className='w-[225px]'/>
+        <img src={ logo } alt="LogoImg" className='h-6'/>
         </div>
         <div className="hidden items-center md:inline-flex">
           <span className="text-sm font-medium text-black">Ready to Get Started ?</span>
