@@ -10,9 +10,9 @@ const Layout = ({ children }) => {
     <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
       <Header />
         <Outlet>
-          {/* <main style={{ flex: 1 }}> */}
+          <main style={{ flex: 1 }}>
             {children}
-          {/* </main> */}
+          </main>
         </Outlet>
       <Footer />
     </div>
