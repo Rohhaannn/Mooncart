@@ -4,7 +4,8 @@ import { menulists } from '../../assets/data/data';
 import { CustomNavLink, CustomLink, Badges } from './CustomComponent';
 import { IoSearchOutline, IoCartOutline, IoHeartOutline } from "react-icons/io5";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -46,8 +47,11 @@ const Header = () => {
 
       <nav className='p-4 flex justify-between items-center'>
         <div className='flex items-center gap-14'>
+          
           <div>
-            <img src={logo} alt='Mooncart Logo' className='h-7' />
+            <Link to='/'>
+              <img src={logo} alt='Mooncart Logo' className='h-7' />
+            </Link>
           </div>
           <div className='hidden lg:flex items-center justify-between gap-8'>
             {menulists.map((list) => (
