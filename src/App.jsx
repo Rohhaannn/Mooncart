@@ -1,7 +1,8 @@
 import './App.css'
 import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
-import {Layout, Home} from './router'
-import Shop from './screen/shop/Shop'
+import {Layout, Home, Shop, ProductDetails} from './router'
+
+
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Route path='/about' element={<Shop/>}/>
         <Route path='/services' element={<Shop/>}/>
         <Route path='/contact' element={<Shop/>}/>
+        <Route path='/product-details/:productId' element={<ProductDetails/>}/>
       </Route>
     )
   )
