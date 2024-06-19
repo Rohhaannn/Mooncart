@@ -8,6 +8,10 @@ import Banner from "../screen/product/Banner";
 import ProductSlide from "../screen/product/ProductSlide";
 import Testimonials from "../components/hero/Testimonials";
 import InstagramPost from "../components/hero/InstagramPost";
+import Shop from "../screen/shop/Shop";
+import ProductDetails from "../screen/product/ProductDetails";
+
+
 
 
 
@@ -23,5 +27,7 @@ export {
   Banner,
   ProductSlide,
   Testimonials,
-  InstagramPost
+  InstagramPost,
+  Shop,
+  ProductDetails
 } 
