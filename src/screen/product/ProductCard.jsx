@@ -4,7 +4,10 @@ import { FaFacebook, FaFacebookSquare, FaRegStar, FaStar, FaStarHalfAlt } from '
 import { IoCart } from 'react-icons/io5'
 import { NavLink } from 'react-router-dom'
 import { BodyOne, Title } from '../../components/common/CustomComponent'
-import { AiFillInstagram, AiFillTwitterCircle, AiFillTwitterSquare } from 'react-icons/ai'
+import { AiFillInstagram, AiFillTwitterSquare } from 'react-icons/ai'
+import { useDispatch } from 'react-redux'
+import { CartActions } from '../../redux/slice/cartSlice'
+
 
 export const RenderRatingsStars = (rating) => {
   const totalStars = 5;
@@ -39,6 +42,9 @@ const ProductCard = ({
 }) => {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const dispatch = useDispatch();
+
+  
   const openModal = () => {
     // console.log("open modal hit")
     setIsModalOpen(true);
@@ -46,6 +52,14 @@ const ProductCard = ({
   const closeModal = () => {
     // console.log("close modal hit")
     setIsModalOpen(false);
+  };
+
+  const discountPrice = price[0].value - (price[0].value - discount) / 100;
+
+  const addToCart = () => {
+    dispatch(
+      CartActions.addToCart({ id, title, price:discountPrice, images })
+    );
   }
 
   return (
@@ -66,13 +80,17 @@ const ProductCard = ({
 
             <div className='flex justify-between w-full p-5 absolute top-0 left-0'>
               {discount && <button className='discount-btn'> {discount}% </button>}
-              {featured && <button className='feature-btn'> {featured === true && "Featured"} </button>}
+              {featured && ( 
+                <button className='feature-btn'> 
+                  {featured === true && "Featured"} 
+                </button> 
+              )}
             </div>
             <div className='overlay flex items-center gap-2 justify-center absolute bottom-0 left-0 right-0 m-5'>
               <button className='quick-view-btn product-btn primary-btn' onClick={openModal}> 
                 Quick view 
               </button>
-              <button className='add-to-cart-btn product-btn primary-btn'> 
+              <button onClick={addToCart} className='add-to-cart-btn product-btn primary-btn'> 
                 <IoCart size={23}/>
               </button>
               <button className='love-btn product-btn primary-btn'> 
