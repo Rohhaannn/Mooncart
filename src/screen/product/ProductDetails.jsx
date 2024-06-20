@@ -4,6 +4,11 @@ import { productlists } from './../../assets/data/data';
 import { Title, Caption, BodyOne} from '../../components/common/CustomComponent';
 import { RenderRatingsStars } from './ProductCard';
 import { BiHeart, BiMinus, BiPlus } from 'react-icons/bi';
+import { ProductSlideCard } from './ProductSlide';
+import { FilterDiscover } from '../../components/hero/InstagramPost';
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 
 
 
@@ -42,7 +47,7 @@ const ProductDetails = () => {
     );
   
     const handleColorClick = (color) => {
-      const newSelectedPrice = prices.find((price) => price.color === color);
+      const newSelectedPrice = price.find((price) => price.color === color);
       setSelectedColor(color);
       setSelectedPrice(newSelectedPrice);
     };
@@ -51,7 +56,21 @@ const ProductDetails = () => {
       return <div> Product Not Found </div>
     }
 
-
+    const CustomPage = ({index, onClick}) => (
+      <div>
+        <img src={images[index].image} alt="" onClick={onClick} />
+      </div>
+    )
+  
+    const settings = {
+      customPaging: (i) => <CustomPage index={i}/>,
+      dots: true,
+      dotsClass: "slick-dots slick-thumb",
+      infinite: true,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1
+    };
   
 
   return (
@@ -61,14 +80,16 @@ const ProductDetails = () => {
 
           <div className='images lg:w-1/2'>
             <div>
-              {images.slice(0, 1).map((image, index)=>(
-                <img 
-                  src={image.image} 
-                  key={index}
-                  className='w-full h-full'
-                  alt="" 
-                />
-              ))}
+              <Slider {...settings}>
+                {images.map((image, index)=>(
+                  <img 
+                    src={image.image} 
+                    key={index}
+                    className='w-full h-full'
+                    alt="" 
+                  />
+                ))}
+              </Slider>
             </div>
           </div>
           
@@ -188,29 +209,41 @@ const ProductDetails = () => {
             </div>
           </div>
 
-          <div className='lg:w-1/2 grid grid-cols-2 gap-5 lg:px-8 mt-5 bg-gray-300'>
-            <ProductDetailsBox 
-              title="All-in-One Car Seat" 
-              desc="One car seat that your child, vehicle and life from birth through booster"
-            />
-            <ProductDetailsBox 
-              title="Space-Saving Design" 
-              desc=" Slim, space saving design takes up less space in vehicle without compromising comfort"
-            />
-            <ProductDetailsBox 
-              title="Easiest to install Correctly" 
-              desc="Chicco patented SuperClinch force-multiplying LATCH tightner ensure a tight and secure fit every time"
-            />
-            <ProductDetailsBox 
-              title="No Added Chemicals" 
-              desc="ClearTex products meet federal flammability standards without added chemicals"
-            />
-            
+          <div className='lg:w-1/2 grid grid-cols-2 gap-5 lg:px-8 mt-5'>
+            <div className='bg-gray-100 py-8 px-1'>
+              <ProductDetailsBox 
+                title="All-in-One Car Seat" 
+                desc="One car seat that your child, vehicle and life from birth through booster"
+              />
+            </div>
+            <div className='bg-gray-100 py-8 px-1'>
+              <ProductDetailsBox 
+                title="Space-Saving Design" 
+                desc="Slim, space saving design takes up less space in vehicle without compromising comfort"
+              />
+            </div>
+            <div className='bg-gray-100 py-8 px-1'>
+              <ProductDetailsBox 
+                title="Easiest to install Correctly" 
+                desc="Chicco patented SuperClinch force-multiplying LATCH tightener ensures a tight and secure fit every time"
+              />
+            </div>
+            <div className='bg-gray-100 py-8 px-1'>
+              <ProductDetailsBox 
+                title="No Added Chemicals" 
+                desc="ClearTex products meet federal flammability standards without added chemicals"
+              />
+            </div>
           </div>
+
+
         </div>
 
-        <Title level={3}> Related Products </Title>
+        <Title level={3} className=""> Related Products </Title>
+        <ProductSlideCard/>
       </section>
+      <br />
+      <FilterDiscover/>
       
     </>
   )
