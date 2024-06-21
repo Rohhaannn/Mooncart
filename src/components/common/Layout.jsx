@@ -9,11 +9,9 @@ const Layout = ({ children }) => {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
       <Header />
-        <Outlet>
-          <main style={{ flex: 1 }}>
-            {children}
-          </main>
-        </Outlet>
+        <main style={{ flex: 1 }}>
+          <Outlet/>
+        </main>
       <Footer />
     </div>
 
@@ -22,7 +20,7 @@ const Layout = ({ children }) => {
 
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
 };
 
 export default Layout;
