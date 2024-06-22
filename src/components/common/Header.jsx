@@ -5,7 +5,7 @@ import { CustomNavLink, CustomLink, Badges } from './CustomComponent';
 import { IoSearchOutline, IoCartOutline, IoHeartOutline } from "react-icons/io5";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { Link, useLocation } from 'react-router-dom';
-
+import ModelCart from '../cart/ModelCart';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -61,34 +61,30 @@ const Header = () => {
             ))}
           </div>
         </div>
+        
         <div className='flex items-center gap-8 icons'>
+
           <div className='uppercase hidden lg:block text-inherit relative z-20'>
             <CustomLink className={`${isScrolled || !isHomePage ? "text-black" : "text-white"}`}>Login</CustomLink>
             <span className={`${isScrolled || !isHomePage ? "text-black" : "text-white"}`}>/</span>
             <CustomLink className={`${isScrolled || !isHomePage ? "text-black" : "text-white"}`}>Register</CustomLink>
           </div>
+
           <div className={`icons flex items-center justify-center gap-6 cursor-pointer ${isScrolled || !isHomePage ? "text-black" : "text-white"}`}>
+            
             <div className='relative z-20'>
               <IoSearchOutline size={23} className={`${isScrolled || !isHomePage ? "text-black" : "text-white"}`} />
             </div>
-            <div className='relative z-20'>
-              <IoHeartOutline size={23} className={`${isScrolled || !isHomePage ? "text-black" : "text-white"}`} />
-              <div className='absolute -top-2 -right-1.5'>
-                <Badges color="bg-green-600">0</Badges>
-              </div>
-            </div>
-            <div className='relative z-20'>
-              <IoCartOutline size={23} className={`${isScrolled || !isHomePage ? "text-black" : "text-white"}`} />
-              <div className='absolute -top-2 -right-1.5'>
-                <Badges color="bg-red-600">0</Badges>
-              </div>
-            </div>
+            
+            <ModelCart/>
+
             <button
               onClick={toggleMenu}
               className='lg:hidden w-10 h-10 flex justify-center items-center bg-black text-white focus:outline-none'
             >
               {isOpen ? <AiOutlineClose size={24} /> : <AiOutlineMenu size={24} />}
             </button>
+
           </div>
         </div>
         
