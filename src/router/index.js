@@ -14,9 +14,6 @@ import ProductDetails from "../screen/product/ProductDetails";
 
 
 
-
-
-
 export {
   Layout,
   Home,

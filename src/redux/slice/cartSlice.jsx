@@ -11,7 +11,7 @@ const cartSlice = createSlice ({
     addToCart(state, action) {
       const newItem = action.payload;
       
-      const existingItem = state.itemList.find((item) => item.id === newItem);
+      const existingItem = state.itemList.find((item) => item.id === newItem.id);
 
       if(existingItem) {
         existingItem.quantity++;
@@ -27,6 +27,28 @@ const cartSlice = createSlice ({
         });
         state.totalQuantity++;
       }
+    },
+
+    removefromCart (state, action) {
+      const id = action.payload;
+
+      const existingItem = state.itemList.find((item) => item.id === id);
+      if(existingItem.quantity === 1) {
+        state.itemList = state.itemList.filter((item)=> item.id !== id);
+        state.totalQuantity--;
+      } else {
+        existingItem.quantity--;
+        existingItem.totalPrice -= existingItem.price;
+      }
+    },
+
+    removeAllFromCart(state, action) {
+      const id = action.payload;
+      state.itemList = state.itemList.filter((item) => item.id !== id);
+      state.totalQuantity -= state.itemList.reduce(
+        (acc, item) => acc + item.quantity,
+        0
+      )
     }
   }
 });
@@ -37,7 +59,8 @@ export const {} = cartSlice.actions;
 export const selectTotalQuantity = createSelector(
   (state) => state.cart.itemList,
   (itemList) => itemList.reduce((acc) => acc + 1, 0)
-)
+);
+
 export const selectTotalPrice = createSelector(
   (state) => state.cart.itemList,
   (itemList) => itemList.reduce((acc, item) => acc + item.totalPrice, 0)
