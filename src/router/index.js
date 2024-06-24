@@ -10,6 +10,7 @@ import Testimonials from "../components/hero/Testimonials";
 import InstagramPost from "../components/hero/InstagramPost";
 import Shop from "../screen/shop/Shop";
 import ProductDetails from "../screen/product/ProductDetails";
+import CartPage from "../screen/CartPage";
 
 
 
@@ -26,5 +27,6 @@ export {
   Testimonials,
   InstagramPost,
   Shop,
-  ProductDetails
+  ProductDetails,
+  CartPage
 } 
