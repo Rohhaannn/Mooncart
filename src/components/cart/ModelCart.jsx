@@ -4,6 +4,9 @@ import { Badges, Title, BodyOne } from '../common/CustomComponent'
 import { useDispatch, useSelector } from 'react-redux'
 import { CartActions, selectTotalPrice, selectTotalQuantity } from '../../redux/slice/cartSlice'
 import { NavLink } from 'react-router-dom'
+import CheckoutForm from './CheckoutForm'
+
+
 
 const ModelCart = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,6 +33,11 @@ const ModelCart = () => {
 
   const handleTabChange = (tab) => {
     setActiveTab(tab);
+  }
+
+  const handlePaymentSuccess = () => {
+    console.log("Payment Success");
+    clearImmediate();
   }
 
   return (
@@ -93,12 +101,12 @@ const ModelCart = () => {
                   <Title level={6}> {totalPrice.toFixed(2)} </Title>
                 </div>
                 <div className="checkout">
-                  <button className='primary-btn w-full mt-5'> View Cart </button>
+                  <CheckoutForm total = {totalPrice} handlePaymentSuccess={handlePaymentSuccess}/>
                 </div>
                 <NavLink
                   to="/cart"
                 >
-                  <button className='primary-btn w-full mt-5'> View Cart </button>
+                  <button className='primary-btn w-full mt-3'> View Cart </button>
                 </NavLink>
               </>
             ) : (

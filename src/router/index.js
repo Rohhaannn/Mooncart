@@ -28,5 +28,6 @@ export {
   InstagramPost,
   Shop,
   ProductDetails,
-  CartPage
+  CartPage,
+
 } 
