@@ -13,10 +13,10 @@ const CheckoutForm = ({ total, handlePaymentSuccess }) => {
 
   const stripeKey = import.meta.env.VITE_STRIPE_KEY;
 
-  if (!stripeKey) {
-    console.error('Stripe publishable key not found');
-    return <p>Stripe key not set. Please configure it in your environment variables.</p>;
-  }
+  // if (!stripeKey) {
+  //   console.error('Stripe publishable key not found');
+  //   return <p>Stripe key not set. Please configure it in your environment variables.</p>;
+  // }
 
   return (
     <>
