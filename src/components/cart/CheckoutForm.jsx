@@ -25,7 +25,7 @@ const CheckoutForm = ({ total, handlePaymentSuccess }) => {
         stripeKey={stripeKey}
         amount={total * 100}
         name="Mooncart E-Commerce Website"
-        description="Payment test using stripe"
+        description="Payment using stripe"
       >
         <button className='w-full bg-gray-200 py-3.5 my-3 font-medium'>
           Pay ${total?.toFixed(2)}
