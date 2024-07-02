@@ -11,6 +11,7 @@ import InstagramPost from "../components/hero/InstagramPost";
 import Shop from "../screen/shop/Shop";
 import ProductDetails from "../screen/product/ProductDetails";
 import CartPage from "../screen/CartPage";
+import Blog from "../screen/blog/Blog"
 
 
 
@@ -28,5 +29,5 @@ export {
   Shop,
   ProductDetails,
   CartPage,
-
+  Blog
 } 
